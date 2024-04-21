@@ -33,7 +33,7 @@ useEffect(()=>{
 const items=stories?.data?.items
 // console.log(items.video_url)
 return (
-    <div className='w-full  flex flex-col  items-center  text-red-600'> stories  {user&&stories&&stories.data&&stories.data.items? <div>
+    <div className='w-full  flex flex-col  items-center  text-red-600'>   {user&&stories&&stories.data&&stories.data.items? <div className=' flex justify-center'> stories 
       
       
       {items.map(items=>(
