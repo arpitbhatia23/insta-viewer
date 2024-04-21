@@ -1,7 +1,7 @@
 import { combineReducers, createSlice } from "@reduxjs/toolkit";
 const initialState={
     data :null ,
-    post:null,
+    user:null,
 
 }
 export const dataslice =createSlice({
@@ -23,8 +23,8 @@ export const postslice =createSlice({
     reducers:{
        
 
-    setpost:(state,action)=>{
-        state.post=action.payload
+    setuser:(state,action)=>{
+        state.user=action.payload
 
     }
     }
@@ -32,9 +32,9 @@ export const postslice =createSlice({
 
 )
 export const {setdata}= dataslice.actions;
-export const {setpost}=postslice.actions
+export const {setuser}=postslice.actions
 const rootReducers=combineReducers({
     data:dataslice.reducer,
-    post:postslice.reducer
+    user:postslice.reducer
 })
 export default rootReducers;

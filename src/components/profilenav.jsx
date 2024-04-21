@@ -39,7 +39,7 @@ const Profilenav = () => {
     <div className=' flex justify-center items-center space-x-24 text-white font-cursive  text-2xl py-8'>
       { profilenav.map(({id,names,link})=>(
      
- <Link to={link} ><div key={id}>{names}</div> </Link>
+ <Link key={id} to={link} ><div key={id}>{names}</div> </Link>
       ))}
     </div>
      }

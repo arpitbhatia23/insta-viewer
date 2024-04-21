@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AiOutlineSearch } from "react-icons/ai";
 import {useDispatch} from "react-redux"
-import { setdata,setpost } from '../app/dataslice';
+import { setdata } from '../app/dataslice';
 function Search({
     className="",
 
@@ -19,7 +19,9 @@ const handelpress=(event)=>{
 const [query,setquery]=useState("")
 const dispatch=useDispatch()
  const search = async(user)=>{
-  const url = `https://instagram-scraper-api2.p.rapidapi.com/v1/info?username_or_id_or_url=${user}`
+  const params = new URLSearchParams({ username_or_id_or_url: user, url_embed_safe: true });
+
+  const url = `https://instagram-scraper-api2.p.rapidapi.com/v1/info?${params}`
   const option = {
     method :'GET',
     headers:{
@@ -28,7 +30,7 @@ const dispatch=useDispatch()
     }
 
   }
-  try{const response = await fetch(url,option)
+  try{const response = await fetch( url,option)
     const data =await response.json()
    console.log(data)
    dispatch(setdata(data))
